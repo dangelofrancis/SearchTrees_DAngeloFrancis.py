@@ -1,4 +1,3 @@
-
 # PROJECT TITLE: Course Schedule
 # PROGRAMMER: D'Angelo Francis
 # DUE DATE: 11/21/2025
@@ -19,7 +18,8 @@ def main():
         print("2. Search by Subject")
         print("3. Search by Subject + Catalog")
         print("4. Search by Instructor")
-        print("5. Quit")
+        print("5. Display Tree Heights")
+        print("6. Quit")
 
         choice = input("Enter choice: ")
 
@@ -49,6 +49,9 @@ def main():
                 item.print()
 
         elif choice == "5":
+            schedule.print_heights()
+
+        elif choice == "6":
             print("Exiting Program...")
             break
 

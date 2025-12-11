@@ -1,9 +1,9 @@
-
 # FILE NAME: schedule.py
 # REQUIREMENTS: Defines the Schedule class to load
 #               store, search, and display the schedule
 
 from schedule_item import ScheduleItem
+from search_trees import BSTMap, AVLTreeMap
 import csv
 
 class Schedule:
@@ -11,18 +11,20 @@ class Schedule:
         """
             Pre: None
 
-            Post: Creates empty dict for the schedule.    
+            Post:     
         """
-        self.data = {}
+        self.bst = BSTMap()
+        self.avl = AVLTreeMap()
 
     def add_entry(self, item):
         """
             Pre: item is a ScheduleItem
 
-            Post: Adds item to the schedule dict
+            Post: Inserts info into BST and AVL trees
         """
         key = item.get_key()
-        self.data[key] = item
+        self.bst.insert(key, item)
+        self.avl.insert(key, item)
 
     def print_header(self):
         """
@@ -41,7 +43,7 @@ class Schedule:
             Post: Prints all schedule items
         """
         self.print_header()
-        for item in self.data.values():
+        for key, item in self.bst.inorder_items():
             item.print()
 
     def find_by_subject(self, subject):
@@ -50,7 +52,11 @@ class Schedule:
 
             Post: Returns list of ScheduleItems matching subject
         """
-        return [item for item in self.data.values() if item.subject == subject]
+        results = []
+        for key, item in self.bst.inorder_items():
+            if item.subject == subject:
+                results.append(item)
+        return results
 
     def find_by_subject_catalog(self, subject, catalog):
         """
@@ -58,10 +64,11 @@ class Schedule:
 
             Post: Returns list of ScheduleItems matching subject and catalog
         """
-        return [
-            item for item in self.data.values()
-            if item.subject == subject and item.catalog == catalog
-        ]
+        results = []
+        for key, item in self.bst.inorder_items():
+            if item.subject == subject and item.catalog == catalog:
+                results.append(item)
+        return results
 
     def find_by_instructor_last_name(self, last_name):
         """
@@ -72,7 +79,7 @@ class Schedule:
         last_name = last_name.lower().strip()
 
         results = []
-        for item in self.data.values():
+        for key, item in self.bst.inorder_items():
             csv_last = item.instructor.split(",")[0].lower().strip()
 
             # allow partial match (Anderson matches Anderson Jr.)
@@ -80,7 +87,6 @@ class Schedule:
                 results.append(item)
 
         return results
-
 
     def load_from_csv(self, filename):
         """
@@ -103,3 +109,8 @@ class Schedule:
                     instructor=row["Instructor"]
                 )
                 self.add_entry(item)
+
+    def print_heights(self):
+        print("BST height:", self.bst.height())
+        print("AVL height:", self.avl.height())
+        
