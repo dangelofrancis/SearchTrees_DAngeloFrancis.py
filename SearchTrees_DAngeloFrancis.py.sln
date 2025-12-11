@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SearchTrees_DAngeloFrancis.py", "SearchTrees_DAngeloFrancis.py.pyproj", "{F9A9C367-E529-47D1-AD84-F58BC0E9E20E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9A9C367-E529-47D1-AD84-F58BC0E9E20E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9A9C367-E529-47D1-AD84-F58BC0E9E20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D23D578-01E9-46CD-A834-BBB766283409}
+	EndGlobalSection
+EndGlobal
