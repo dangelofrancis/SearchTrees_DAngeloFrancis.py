@@ -1,6 +1,6 @@
-# PROJECT TITLE: Course Schedule
+# PROJECT TITLE: Course Schedule with Search Trees
 # PROGRAMMER: D'Angelo Francis
-# DUE DATE: 11/21/2025
+# DUE DATE: 12/10/2025
 # REQUIREMENTS: 
 
 # FILE NAME: main.py 
