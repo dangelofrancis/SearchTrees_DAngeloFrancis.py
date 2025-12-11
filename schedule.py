@@ -110,7 +110,7 @@ class Schedule:
                 )
                 self.add_entry(item)
 
-    def print_heights(self):
+    def get_height(self):
         print("BST height:", self.bst.height())
         print("AVL height:", self.avl.height())
         

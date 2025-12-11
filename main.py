@@ -49,7 +49,7 @@ def main():
                 item.print()
 
         elif choice == "5":
-            schedule.print_heights()
+            schedule.get_height()
 
         elif choice == "6":
             print("Exiting Program...")
